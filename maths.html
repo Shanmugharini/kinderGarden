@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Lessons and Worksheets</title>
+  <style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+  
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .logo span:nth-child(1)  { color: red; }
+    .logo span:nth-child(2)  { color: orange; }
+    .logo span:nth-child(3)  { color: gold; }
+    .logo span:nth-child(4)  { color: green; }
+    .logo span:nth-child(5)  { color: teal; }
+    .logo span:nth-child(6)  { color: blue; }
+    .logo span:nth-child(7)  { color: indigo; }
+    .logo span:nth-child(8)  { color: violet; }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+font-size:20px;
+    }
+
+    nav ul li .btn {
+      background-color: #ff4d88;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+    }
+    body {
+      background: url("images/greater_i.jpg") center/cover fixed no-repeat;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-top: 30px;
+      color: white;
+    }
+
+    img {
+      margin: 15px;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      transition: border 0.3s ease;
+    }
+
+    img.completed {
+      border-color: green;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    button {
+      display: block;
+      margin: 15px auto;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #log {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      width: 80%;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <div class="logo">K<span>i</span>d<span>d</span>o<span>L</span>e<span>a</span>r<span>n</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="grade2.html">Study Zone</a></li>
+     
+        <li><a class="btn" href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="section">
+    <h1>Maths Lessons</h1>
+    <a href="numbers.html" onclick="trackMathAndGo(event, 'numbers')"><img id="numbers" src="images1/numbers.png" width="300" height="300"></a>
+    <a href="table_v.html" onclick="trackMathAndGo(event, 'table')"><img id="table" src="images1/table.png" width="300" height="300"></a>
+    <a href="shape_v.html" onclick="trackMathAndGo(event, 'shapes')"><img id="shapes" src="images1/shapes.png" width="300" height="300"></a>
+    <a href="greater_v.html" onclick="trackMathAndGo(event, 'greater')"><img id="greater" src="images/greater.jpg" width="300" height="300"></a>
+    <a href="even_v.html" onclick="trackMathAndGo(event, 'even')"><img id="even" src="images/even.jpg" width="300" height="300"></a>
+    <a href="multiply.html" onclick="trackMathAndGo(event, 'multiply')"><img id="multiply" src="images1/multiply.jpg" width="300" height="300"></a>
+    <a href="fraction_v.html" onclick="trackMathAndGo(event, 'fractionv')"><img id="fractionv" src="images/fraction.jpg" width="300" height="300"></a>
+  </div>
+
+  <div class="section">
+    <h1>Maths Worksheets</h1>
+    <a href="memo1.html" onclick="trackMathAndGo(event, 'memo1')"><img id="memo1" src="images1/memo1.jpg" width="300" height="300"></a>
+    <a href="math4.html" onclick="trackMathAndGo(event, 'math4')"><img id="math4" src="images1/math4.jpg" width="300" height="300"></a>
+    <a href="table2.html" onclick="trackMathAndGo(event, 'table2')"><img id="table2" src="images1/table2.jpg" width="300" height="300"></a>
+    <a href="table.html" onclick="trackMathAndGo(event, 'table3')"><img id="table3" src="images1/table.jpg" width="300" height="300"></a>
+    <a href="table4.html" onclick="trackMathAndGo(event, 'table4')"><img id="table4" src="images1/table4.jpg" width="300" height="300"></a>
+    <a href="table1.html" onclick="trackMathAndGo(event, 'table1')"><img id="table1" src="images1/table1.jpg" width="300" height="300"></a>
+    <a href="math1new.html" onclick="trackMathAndGo(event, 'math1new')"><img id="images1/math1new" src="math1new.jpg" width="300" height="300"></a>
+    <a href="shape1.html" onclick="trackMathAndGo(event, 'shape1')"><img id="shape1" src="images1/shape1.jpg" width="300" height="300"></a>
+    <a href="math2.html" onclick="trackMathAndGo(event, 'math2')"><img id="math2" src="images1/math2.jpg" width="300" height="300"></a>
+    <a href="math3.html" onclick="trackMathAndGo(event, 'math3')"><img id="math3" src="images1/math3.jpg" width="300" height="300"></a>
+    <a href="math5.html" onclick="trackMathAndGo(event, 'math5')"><img id="math5" src="images1/math5.jpg" width="300" height="300"></a>
+    <a href="fraction.html" onclick="trackMathAndGo(event, 'fraction')"><img id="fraction" src="images/fraction.jpg" width="300" height="300"></a>
+  </div>
+
+  <!-- Buttons -->
+  <button onclick="viewTracking()">📋 View Tracking Log</button>
+  <button onclick="clearTracking()">🗑️ Clear Tracking Log</button>
+
+  <!-- Tracking Log -->
+  <div id="log"><p>No tracking data yet.</p></div>
+
+  <script>
+    const nameMap = {
+      numbers: "Numbers Video",
+      table: "Table Video",
+      shapes: "Shapes Video",
+      greater: "Greater Than Video",
+      even: "Even/Odd Video",
+      multiply: "Multiplication Video",
+      fractionv: "Fractions Video",
+      memo1: "Memory Worksheet 1",
+      math4: "Math Worksheet 4",
+      table2: "Table Worksheet 2",
+      table3: "Table Worksheet 3",
+      table4: "Table Worksheet 4",
+      table1: "Table Worksheet 1",
+      math1new: "Math Worksheet 1 (New)",
+      shape1: "Shapes Worksheet",
+      math2: "Math Worksheet 2",
+      math3: "Math Worksheet 3",
+      math5: "Math Worksheet 5",
+      fraction: "Fractions Worksheet"
+    };
+
+    function trackMathAndGo(event, id) {
+      event.preventDefault();
+
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("mathProgress")) || {};
+
+      if (!progress[currentUser]) progress[currentUser] = {};
+
+      if (!progress[currentUser][id]) {
+        progress[currentUser][id] = new Date().toLocaleString();
+        localStorage.setItem("mathProgress", JSON.stringify(progress));
+      }
+
+      document.getElementById(id)?.classList.add("completed");
+
+      const href = event.currentTarget.getAttribute("href");
+      setTimeout(() => window.location.href = href, 100);
+    }
+
+    function viewTracking() {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("mathProgress")) || {};
+      let logData = progress[currentUser] || {};
+
+      const logContainer = document.getElementById("log");
+
+      if (Object.keys(logData).length === 0) {
+        logContainer.innerHTML = "<p>No tracking data yet.</p>";
+      } else {
+        let logHtml = Object.entries(logData)
+          .map(([item, time]) => `<p><strong>${nameMap[item] || item}</strong> - Completed on <em>${time}</em></p>`)
+          .join('');
+        logContainer.innerHTML = logHtml;
+      }
+    }
+
+    function clearTracking() {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("mathProgress")) || {};
+      delete progress[currentUser];
+      localStorage.setItem("mathProgress", JSON.stringify(progress));
+      document.getElementById("log").innerHTML = "<p>Tracking log cleared.</p>";
+    }
+
+    // On load, mark completed items with green border
+    window.onload = () => {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("mathProgress")) || {};
+      let completed = progress[currentUser] || {};
+
+      Object.keys(completed).forEach(id => {
+        document.getElementById(id)?.classList.add("completed");
+      });
+    };
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<title>Missing Number Exercise</title>
+<style>
+body
+{
+color:white;
+text-align:center;
+font-size:40px;
+ background: url("images1/numbers_i.jpg") center/cover fixed no-repeat;
+}
+button
+{
+font-size:20px;
+padding: 15px 32px;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+
+</style>
+</head>
+<h1>Fill the box with suitable number <h1>
+<body>
+<p> 1) 51 , 52 , 53 , 54 ,
+ <input type="text" id="1" style="font-size:80%; width:65px; height:65px;"></p>
+<p>2)  56 , 57 , 58 , <input id="2" type="text" style="font-size:80%; width:65px; height:65px;">, 60 </p>
+<p> 3) 61 ,
+ <input id="3" type="text" style="font-size:80%; width:65px; height:65px;"> 63 , 64 , 65 </p>
+<p> 4) 66 , 67 , 
+ <input id="4" type="text" style="font-size:80%; width:65px; height:65px;"> , 69 , 70 </p>
+<p>5)  <input id="5" type="text" style="font-size:80%; width:65px; height:65px;"> , 72 , 73 , 74 , 75</p>
+<p>6) 76 , 77 , <input id="6" type="text" style="font-size:80%; width:65px; height:65px;"> , 79 , 80</p>
+<p>7)  81 , 82 , 83 , 84 ,<input id="7" type="text" style="font-size:80%; width:65px; height:65px;"> </p>
+<p>8) 86 , 87 , 88 , <input id="8" type="text" style="font-size:80%; width:65px; height:65px;"> ,90</p>
+<p> 9) 91 , 92 ,  <input id="9" type="text" style="font-size:80%; width:65px; height:65px;"> , 94 , 95</p>
+<p>10)  96 , 97 , <input id="10" type="text" style="font-size:80%; width:65px; height:65px;"> , 99 , 100</p>
+<button type="button" onclick="fn()">click</button>
+<p id="r"></p>
+<script>
+function fn()
+ {
+let c=0;
+if(document.getElementById("1").value=="55")
+c+=1;
+if(document.getElementById("2").value=="59")
+c+=1;
+if(document.getElementById("3").value=="62")
+c+=1;
+if(document.getElementById("4").value=="68")
+c+=1;
+if(document.getElementById("5").value=="71")
+c+=1;
+if(document.getElementById("6").value=="78")
+c+=1;
+if(document.getElementById("7").value=="85")
+c+=1;
+if(document.getElementById("8").value=="89")
+c+=1;
+if(document.getElementById("9").value=="93")
+c+=1;
+if(document.getElementById("10").value=="98")
+c+=1;
+alert("TOTAL SCORE"+c);
+document.getElementById("r").innerHTML="TOTAL SCORE:"+c;
+}
+</script>
+</body>
+
+</html>

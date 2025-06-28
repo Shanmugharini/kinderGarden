@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+  <title>Grade 2 Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: url("images/g.avif") center/cover fixed no-repeat;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .logo span:nth-child(1)  { color: red; }
+    .logo span:nth-child(2)  { color: orange; }
+    .logo span:nth-child(3)  { color: gold; }
+    .logo span:nth-child(4)  { color: green; }
+    .logo span:nth-child(5)  { color: teal; }
+    .logo span:nth-child(6)  { color: blue; }
+    .logo span:nth-child(7)  { color: indigo; }
+    .logo span:nth-child(8)  { color: violet; }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+font-size:20px;
+  transition: all 0.3s ease;
+}
+
+
+
+    nav ul li .btn {
+      background-color: #ff4d88;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+    }
+
+    h1 {
+      font-size: 60px;
+      text-align: center;
+      color: purple;
+      text-shadow: 2px 2px lavender;
+    }
+
+    img {
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 13px 7px 10px purple;
+      margin: 100px;
+      border: 5px solid purple;
+      transition: all 0.3s ease;
+    }
+
+    .completed {
+      border: 8px solid limegreen;
+      box-shadow: 0 0 25px limegreen;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        margin: 20px;
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+
+  <script>
+    const englishItems = [
+      'Colors Video', 'Noun Video', 'Verb Video', 'Gender Video', 'Article Video', 'Emotion Video', 'Pairs Video',
+      'Colors Worksheet', 'Noun Worksheet', 'Verb Worksheet', 'Gender Worksheet', 'Article Worksheet', 'Exercise Worksheet', 'Pairs Worksheet'
+    ];
+
+    const mathItems = [
+      'numbers', 'table', 'shapes', 'greater', 'even', 'multiply', 'fractionv',
+      'memo1', 'math4', 'table2', 'table3', 'table4', 'table1', 'math1new',
+      'shape1', 'math2', 'math3', 'math5', 'fraction'
+    ];
+
+    function updateEnglishProgressUI() {
+      const currentUser = localStorage.getItem("loggedInUser");
+      if (!currentUser) return;
+
+      let progress = JSON.parse(localStorage.getItem("englishProgress")) || {};
+      let userItems = progress[currentUser] || [];
+
+      let completedCount = userItems.length;
+      let totalCount = englishItems.length;
+      let percentage = Math.round((completedCount / totalCount) * 100);
+
+      const englishProgressText = document.getElementById("english-progress");
+      englishProgressText.innerText = `English Progress: ${percentage}% completed`;
+
+      const englishImage = document.getElementById("english");
+      if (percentage === 100) {
+        englishImage.classList.add("completed");
+      } else {
+        englishImage.classList.remove("completed");
+      }
+    }
+
+    function updateMathProgressUI() {
+      const currentUser = localStorage.getItem("loggedInUser");
+      if (!currentUser) return;
+
+      const progress = JSON.parse(localStorage.getItem("mathProgress")) || {};
+      const userProgress = progress[currentUser] || {};
+      const completedCount = Object.keys(userProgress).length;
+      const totalCount = mathItems.length;
+
+      const percentage = Math.round((completedCount / totalCount) * 100);
+
+      const mathProgressText = document.getElementById("math-progress");
+      mathProgressText.innerText = `Math Progress: ${percentage}% completed`;
+
+      const mathImage = document.getElementById("maths");
+      if (percentage === 100) {
+        mathImage.classList.add("completed");
+      } else {
+        mathImage.classList.remove("completed");
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html";
+    }
+
+ 
+  const scienceItems = [
+    "plants", "flowers", "states", "metals", "wild", "goodhabit",
+    "drag", "flower_new", "states_q", "picture", "wild_animals", "hygiene"
+  ];
+
+  function updateScienceProgressUI() {
+    const currentUser = localStorage.getItem("loggedInUser");
+    if (!currentUser) return;
+
+    const progress = JSON.parse(localStorage.getItem("scienceProgress")) || {};
+    const userProgress = progress[currentUser] || {};
+    const completedCount = Object.keys(userProgress).length;
+    const totalCount = scienceItems.length;
+
+    const percentage = Math.round((completedCount / totalCount) * 100);
+
+    const scienceProgressText = document.getElementById("science-progress");
+    scienceProgressText.innerText = `Science Progress: ${percentage}% completed`;
+
+    const scienceImage = document.getElementById("science");
+    if (percentage === 100) {
+      scienceImage.classList.add("completed");
+    } else {
+      scienceImage.classList.remove("completed");
+    }
+  }
+
+window.onload = function () {
+    updateEnglishProgressUI();
+    updateMathProgressUI();
+    updateScienceProgressUI(); // <-- Add this line
+  };
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">K<span>i</span>d<span>d</span>o<span>L</span>e<span>a</span>r<span>n</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+     
+        <li><a href="grade2.html">Study Zone</a></li>
+      
+        <li><a class="btn" href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>📚 GRADE 2</h1>
+
+  <div style="text-align: center;">
+    <a href="english1.html">
+      <img id="english" src="images/eng.jpg" width="250px" height="250px">
+    </a>
+
+    <a href="maths.html">
+      <img id="maths" src="images1/mat.jpg" width="250px" height="250px">
+    </a>
+
+    <a href="science.html">
+      <img id="science" src="images1/sci.jpg" width="250px" height="250px">
+    </a>
+  </div>
+
+  <div>
+    <h2 id="english-progress" style="text-align:center; color:darkblue;"></h2>
+    <h2 id="math-progress" style="text-align:center; color:darkgreen;"></h2>
+  <h2 id="science-progress" style="text-align:center; color:darkorange;"></h2>
+
+  </div>
+</body>
+</html>

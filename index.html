@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Playschool Website</title>
+  <link rel="stylesheet" href="css/kinder.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Login/Signup Overlay -->
+  <div id="auth-overlay" class="auth-overlay">
+    <div class="form-box" id="signup-form">
+      <h2>Sign Up</h2>
+    <input type="text" id="signup-name" placeholder="Your Name" />
+<input type="text" id="signup-username" placeholder="Username" />
+<input type="password" id="signup-password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+    </div>
+
+    <div class="form-box" id="login-form" style="display: none;">
+      <h2>Login</h2>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+    </div>
+  </div>
+
+  <!-- Main Page Content -->
+  <div id="main-content" class="blurred">
+    <header>
+      <div class="logo">K<span>i</span>d<span>d</span>o<span>L</span>e<span>a</span>r<span>n</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="grade2.html">Study Zone</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn" href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1 id="welcome-heading">The best playschool for your kid</h1>
+        <p>What you get by achieving your goals is not as important as what you become by achieving your goals.</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/kinder1.jpg" alt="Happy Kid" />
+      </div>
+    </section>
+  </div>
+<section id="about"  class="about-section">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/kinder2.webp" alt="Happy Kids in Classroom" />
+    </div>
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>
+        Welcome to <strong>KiddoLearn</strong> – where little minds grow big dreams!  
+        We create a joyful, caring, and stimulating environment for early learners to explore, imagine, and grow.
+      </p>
+      <p>
+        Our mission is to provide a fun and foundational education through creative activities, storytelling, music, and play-based learning.  
+        Every child is unique, and we ensure they are nurtured with love and learning at their own pace.
+      </p>
+      <p>
+        At KiddoLearn, we’re not just preparing kids for school — we’re helping them build a love for learning that lasts a lifetime.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="contact-section">
+  <h2>Contact Us</h2>
+  <p class="sub-text">Have a question or just want to connect? Reach out to us anytime!</p>
+
+
+
+<div id="contact" class="contact-info">
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i class="fas fa-envelope"></i>
+    </div>
+    <h4>Email</h4>
+    <p><a href="mailto:kiddolearn@example.com">kiddolearn@example.com</a></p>
+  </div>
+
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i class="fas fa-phone"></i>
+    </div>
+    <h4>Phone</h4>
+    <p>+91 9876543210</p>
+  </div>
+
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i class="fab fa-linkedin"></i>
+    </div>
+    <h4>LinkedIn</h4>
+    <p><a href="https://www.linkedin.com/in/kiddolearn" target="_blank">linkedin.com/in/kiddolearn</a></p>
+  </div>
+
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i class="fab fa-instagram"></i>
+    </div>
+    <h4>Instagram</h4>
+    <p><a href="https://www.instagram.com/kiddolearn" target="_blank">@kiddolearn</a></p>
+  </div>
+
+  <div class="info-box">
+    <div class="icon-wrapper">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+    <h4>Facebook</h4>
+    <p><a href="https://www.facebook.com/kiddolearn" target="_blank">facebook.com/kiddolearn</a></p>
+  </div>
+</div>
+</section>
+
+
+
+  <script>
+window.onload = function () {
+  const username = localStorage.getItem('loggedInUser');
+  const name = localStorage.getItem('loggedInName');
+  if (username && name) {
+    document.getElementById('auth-overlay').style.display = 'none';
+    document.getElementById('main-content').classList.remove('blurred');
+    document.getElementById("welcome-heading").innerText = `Welcome, ${name}!`;
+  } else {
+    document.getElementById('auth-overlay').style.display = 'flex';
+    document.getElementById('signup-form').style.display = 'block';
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('main-content').classList.add('blurred');
+  }
+};
+
+
+    function toggleForms() {
+      const signupForm = document.getElementById("signup-form");
+      const loginForm = document.getElementById("login-form");
+      if (signupForm.style.display === "none") {
+        signupForm.style.display = "block";
+        loginForm.style.display = "none";
+      } else {
+        signupForm.style.display = "none";
+        loginForm.style.display = "block";
+      }
+    }
+
+function signup() {
+  const name = document.getElementById("signup-name").value.trim();
+  const username = document.getElementById("signup-username").value.trim();
+  const password = document.getElementById("signup-password").value.trim();
+
+  if (name && username && password) {
+    if (localStorage.getItem("user_" + username)) {
+      alert("User already exists. Please login.");
+      toggleForms();
+    } else {
+      const userData = {
+        name: name,
+        password: password
+      };
+      localStorage.setItem("user_" + username, JSON.stringify(userData));
+      alert("Signup successful! Please login.");
+      toggleForms();
+    }
+  } else {
+    alert("Please fill in all fields.");
+  }
+}
+
+
+function login() {
+  const username = document.getElementById("login-username").value.trim();
+  const password = document.getElementById("login-password").value.trim();
+  const storedData = localStorage.getItem("user_" + username);
+
+  if (storedData) {
+    const user = JSON.parse(storedData);
+    if (user.password === password) {
+      localStorage.setItem("loggedInUser", username);
+      localStorage.setItem("loggedInName", user.name);
+      document.getElementById("auth-overlay").style.display = "none";
+      document.getElementById("main-content").classList.remove("blurred");
+      document.getElementById("welcome-heading").innerText = `Welcome, ${user.name}!`;
+    } else {
+      alert("Invalid username or password.");
+    }
+  } else {
+    alert("User not found. Please sign up.");
+  }
+}
+
+
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("loggedInName");
+  document.getElementById("auth-overlay").style.display = "flex";
+  document.getElementById("signup-form").style.display = "none";
+  document.getElementById("login-form").style.display = "block";
+  document.getElementById("main-content").classList.add("blurred");
+}
+
+  </script>
+
+</body>
+</html>

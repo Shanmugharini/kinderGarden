@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body
+{
+color:white;
+text-align:center;
+font-size:40px;
+ background: url("images1/table_i.jpg") center/cover fixed no-repeat;
+}
+button
+{
+font-size:20px;
+padding: 15px 32px;
+}
+
+</style>
+</head>
+<body>
+<h1> Fill the boxes with correct answer</h1>
+<p> 6 &times; 1 =
+ <input id="1"  type="text" style="font-size:80%; width:35px; height:35px"></p>
+<p> 6 &times; 2 =
+ <input id="2"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<p> 6 &times; 3 =
+ <input id="3"  type="text" style="font-size:80%; width:35px; height:35px;"></p>
+<p> 6 &times; 4 =
+ <input id="4"  type="text" style="font-size:80%; width:35px; height:35px;"></p>
+<p> 6 &times; 5 =
+ <input id="5"  type="text"  style="font-size:80%; width:35px; height:35px; "></p>
+<p> 6 &times; 6 =
+ <input id="6"  type="text"  style="font-size:80%; width:35px; height:35px; "></p>
+<p> 6 &times; 7 =<input id="7"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<p> 6 &times; 8 = <input id="8"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<p> 6 &times; 9 =<input id="9"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<p>  6 &times; 10 =<input id="10"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<button type="button" onclick="fn()">click</button>
+<p id="r"></p>
+<script>
+function fn()
+ {
+let c=0;
+if(document.getElementById("1").value=="6")
+c+=1;
+if(document.getElementById("2").value=="12")
+c+=1;
+if(document.getElementById("3").value=="18")
+c+=1;
+if(document.getElementById("4").value=="24")
+c+=1;
+if(document.getElementById("5").value=="30")
+c+=1;
+if(document.getElementById("6").value=="36")
+c+=1;
+if(document.getElementById("7").value=="42")
+c+=1;
+if(document.getElementById("8").value=="48")
+c+=1;
+if(document.getElementById("9").value=="54")
+c+=1;
+if(document.getElementById("10").value=="60")
+c+=1;
+alert("TOTAL SCORE"+c);
+document.getElementById("r").innerHTML="TOTAL SCORE:"+c;
+}
+</script>
+</body>
+
+</html>

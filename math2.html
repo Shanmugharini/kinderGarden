@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<title>Greater or Lesser Exercise</title>
+<style>
+body
+{
+color:white;
+text-align:center;
+font-size:40px;
+ background: url("images/greater_i.jpg") center/cover fixed no-repeat;
+}
+button
+{
+font-size:20px;
+padding: 15px 32px;
+}
+
+</style>
+</head>
+<body>
+<h1> Fill the box with suitable symbol ( >, < , = ) </h1>
+<p>1)  40 <input id="2" type="text" style="font-size:80%; width:35px; height:35px;"> 40</p>
+<p>2)  65
+ <input id="3" type="text" style="font-size:80%; width:35px; height:35px;"> 43</p>
+<p>3)  88
+ <input id="4" type="text" style="font-size:80%; width:35px; height:35px;"> 69</p>
+<p>4) 12 <input id="5" type="text" style="font-size:80%; width:35px; height:35px;">55</p>
+<p>5)  36 <input id="6" type="text" style="font-size:80%; width:35px; height:35px;">36</p>
+<p>6)  11 <input id="7" type="text" style="font-size:80%; width:35px; height:35px;"> 9</p>
+<p>7)  45  <input id="8" type="text" style="font-size:80%; width:35px; height:35px;"> 23</p>
+<p>8) 99 <input id="9" type="text" style="font-size:80%; width:35px; height:35px;"> 98</p>
+<p>9)  23 <input id="10" type="text" style="font-size:80%; width:35px; height:35px;"> 23</p>
+<p>10) 73
+ <input type="text" id="1" style="font-size:80%; width:35px; height:35px;"> 89</p>
+<button type="button" onclick="fn()">click</button>
+<p id="r"></p>
+<script>
+function fn()
+ {
+let c=0;
+if(document.getElementById("1").value=="<")
+c+=1;
+if(document.getElementById("2").value=="=")
+c+=1;
+if(document.getElementById("3").value==">")
+c+=1;
+if(document.getElementById("4").value==">")
+c+=1;
+if(document.getElementById("5").value=="<")
+c+=1;
+if(document.getElementById("6").value=="=")
+c+=1;
+if(document.getElementById("7").value==">")
+c+=1;
+if(document.getElementById("8").value==">")
+c+=1;
+if(document.getElementById("9").value==">")
+c+=1;
+if(document.getElementById("10").value=="=")
+c+=1;
+alert("TOTAL SCORE"+c);
+document.getElementById("r").innerHTML="TOTAL SCORE:"+c;
+}
+</script>
+</body>
+
+</html>

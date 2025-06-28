@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .logo span:nth-child(1)  { color: red; }
+    .logo span:nth-child(2)  { color: orange; }
+    .logo span:nth-child(3)  { color: gold; }
+    .logo span:nth-child(4)  { color: green; }
+    .logo span:nth-child(5)  { color: teal; }
+    .logo span:nth-child(6)  { color: blue; }
+    .logo span:nth-child(7)  { color: indigo; }
+    .logo span:nth-child(8)  { color: violet; }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+font-size:20px;
+    }
+
+    nav ul li .btn {
+      background-color: #ff4d88;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+    }
+    body {
+      background: url("images1/multiply_i.jpg") center/cover fixed no-repeat;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      color: darkgreen;
+    }
+
+    img {
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 13px 7px 10px purple;
+      border: 5px solid transparent;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      transition: border 0.3s ease;
+    }
+
+    img.completed {
+      border-color: green;
+    }
+
+    a {
+      text-decoration: none;
+padding:30px;
+    }
+
+    .section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #log {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+      width: 80%;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<header>
+    <div class="logo">K<span>i</span>d<span>d</span>o<span>L</span>e<span>a</span>r<span>n</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+       
+        <li><a href="grade2.html">Study Zone</a></li>
+      
+        <li><a class="btn" href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Science Lesson</h1>
+  <div class="section">
+    <a href="plants_v.html" onclick="trackScience('plants')"><img id="plants" src="images1/plants.jpg"></a>
+    <a href="flower_v.html" onclick="trackScience('flowers')"><img id="flowers" src="images/flowers.jpg"></a>
+    <a href="states_v.html" onclick="trackScience('states')"><img id="states" src="images1/states.jpg"></a>
+    <a href="metal_v.html" onclick="trackScience('metals')"><img id="metals" src="images1/metals.jpg"></a>
+    <a href="wild_v.html" onclick="trackScience('wild')"><img id="wild" src="images1/wild.jpg"></a>
+    <a href="goodhabit_v.html" onclick="trackScience('goodhabit')"><img id="goodhabit" src="images/goodhabit.jpg"></a>
+  </div>
+
+  <h1>Science Worksheet</h1>
+  <div class="section">
+    <a href="drag.html" onclick="trackScience('drag')"><img id="drag" src="images/drag.jpg"></a>
+    <a href="flower_new.html" onclick="trackScience('flower_new')"><img id="flower_new" src="images/flower_new.jpg"></a>
+    <a href="states.html" onclick="trackScience('states_q')"><img id="states_q" src="images1/states_q.jpg"></a>
+    <a href="picture.html" onclick="trackScience('picture')"><img id="picture" src="images1/picture.jpg"></a>
+    <a href="wildanimal.html" onclick="trackScience('wild_animals')"><img id="images1/wild_animals" src="images/wild_animals.jpg"></a>
+    <a href="hygiene.html" onclick="trackScience('hygiene')"><img id="hygiene" src="images/hygiene.jpg"></a>
+  </div>
+
+  <button onclick="viewTracking()">📋 View Tracking Log</button>
+  <button onclick="clearTracking()">🗑️ Clear Tracking Log</button>
+
+  <div id="log"></div>
+
+  <script>
+    const scienceItems = [
+      "plants", "flowers", "states", "metals", "wild", "goodhabit",
+      "drag", "flower_new", "states_q", "picture", "wild_animals", "hygiene"
+    ];
+
+    const nameMap = {
+      plants: "Plants Video",
+      flowers: "Flowers Video",
+      states: "States of Matter Video",
+      metals: "Metals Video",
+      wild: "Wild Animals Video",
+      goodhabit: "Good Habits Video",
+      drag: "Drag and Drop Worksheet",
+      flower_new: "Flowers Worksheet",
+      states_q: "States Worksheet",
+      picture: "Picture Match Worksheet",
+      wild_animals: "Wild Animals Worksheet",
+      hygiene: "Hygiene Worksheet"
+    };
+
+    function trackScience(id) {
+      markCompleted(id);
+    }
+
+    function markCompleted(id) {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("scienceProgress")) || {};
+
+      if (!progress[currentUser]) {
+        progress[currentUser] = {};
+      }
+
+      if (!progress[currentUser][id]) {
+        const timestamp = new Date().toLocaleString();
+        progress[currentUser][id] = timestamp;
+      }
+
+      localStorage.setItem("scienceProgress", JSON.stringify(progress));
+    }
+
+    function updateProgress() {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("scienceProgress")) || {};
+      let completedItems = progress[currentUser] ? Object.keys(progress[currentUser]) : [];
+
+      scienceItems.forEach(id => {
+        if (completedItems.includes(id)) {
+          document.getElementById(id)?.classList.add("completed");
+        }
+      });
+    }
+
+    function viewTracking() {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("scienceProgress")) || {};
+      let logData = progress[currentUser] || {};
+
+      const logContainer = document.getElementById("log");
+      if (Object.keys(logData).length === 0) {
+        logContainer.innerHTML = "<p>No tracking data yet.</p>";
+      } else {
+        let logHtml = Object.entries(logData)
+          .map(([item, time]) => `<p><strong>${nameMap[item] || item}</strong> - Completed on <em>${time}</em></p>`)
+          .join('');
+        logContainer.innerHTML = logHtml;
+      }
+    }
+
+    function clearTracking() {
+      const currentUser = localStorage.getItem("loggedInUser") || "guest";
+      let progress = JSON.parse(localStorage.getItem("scienceProgress")) || {};
+
+      delete progress[currentUser];
+      localStorage.setItem("scienceProgress", JSON.stringify(progress));
+
+      document.getElementById("log").innerHTML = "<p>Tracking log cleared.</p>";
+      updateProgress();
+    }
+
+    window.onload = updateProgress;
+  function logout() {
+    localStorage.removeItem("loggedInUser");
+    window.location.href = "index.html";
+  }
+  </script>
+</body>
+</html>

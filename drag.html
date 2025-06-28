@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+
+ 
+
+<head>
+
+<style>
+body
+{
+background-color:light-purple;
+}
+img
+{
+border-radius:2px;
+padding:10px;
+}
+#image
+{
+background-color:#aoe7e5;
+padding:20px;
+}
+span{
+
+color:black;
+
+}
+        .getData {
+         text-align:center;
+            width: 150px;
+            height: 170px;
+            padding: 10px;
+            border: 1px solid #4f4d4d;
+        }
+div
+{
+float:left;
+margin:30px;
+display:block;
+}
+</style>
+
+<script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+ 
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+ 
+
+        function drop(event) {
+            event.preventDefault();
+            var draggedId = event.dataTransfer.getData("text");
+            var draggedImage = document.getElementById(draggedId);
+            var targetDropZone = event.target;
+
+ 
+
+            // Check if the dragged image matches the target drop zone
+            if (targetDropZone.dataset.acceptedId === draggedId) {
+                targetDropZone.appendChild(draggedImage);
+            } else {
+                console.log("Invalid match. Please try again.");
+            }
+        }
+</script>
+</head>
+
+ 
+
+<body >
+<h3>Drag the correct image into the matching rectangle:</h3>
+<div  class="getData" data-accepted-id="d" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">ROOT</span></div>
+
+<br>
+<div class="getData" data-accepted-id="c" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">STEM</span></div>
+<br>
+<div class="getData" data-accepted-id="e" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">LEAF</span></div>
+<br>
+<div class="getData" data-accepted-id="a" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">FRUIT</span></div>
+<br>
+<div class="getData" data-accepted-id="b" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">SEED</span></div>
+<br>
+<div class="getData" data-accepted-id="f" ondrop="drop(event)" ondragover="allowDrop(event)"><span style="font-size:20px;">FLOWER</span></div>
+<br>
+<br><br>
+<div id="image">
+<img id="a" src="images/fruit.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="b" src="images1/seed.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="c" src="images1/stem.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="d" src="images1/root.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="e" src="images/leaf.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="f" src="images/flower.jpg" draggable="true" ondragstart="drag(event)" width="150" height="150">
+</div>
+</body>
+
+ 
+
+</html>

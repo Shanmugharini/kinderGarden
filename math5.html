@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<title>Multiplication Exercise</title>
+<style>
+body
+{
+color: black;
+text-align:center;
+font-size:40px;
+ background: url("images1/multiply_i.jpg") center/cover fixed no-repeat;
+}
+button
+{
+font-size:20px;
+padding: 15px 32px;
+border-radius:8px;
+cursor:pointer;
+background-color:purple;
+color: white;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<h1>Fill the box with correct answer </h1>
+<p><img src="images/3apple.jpg" width="300px" height="300px"> &times; <img src="images/7apple.jpg" width="300px" height="300px"> =
+ <input id="1"  type="text" style="font-size:80%; width:35px; height:35px"></p>
+<p> <img src="images/5pencil.jpg" width="300px" height="300px"> &times; <img src="images/4pencil.jpg" width="300px" height="300px"> =
+ <input id="2"  type="text" style="font-size:80%; width:35px; height:35px; "></p>
+<p> <img src="images/honey.jpg" width="300px" height="300px"> &times; <img src="images/1honey.jpg" width="300px" height="300px"> =
+ <input id="3"  type="text" style="font-size:80%; width:35px; height:35px;"></p>
+<p> <img src="images/5icecream.jpg" width="300px" height="300px"> &times; <img src="images/5icecream.jpg" width="300px" height="300px"> =
+ <input id="4"  type="text" style="font-size:80%; width:35px; height:35px;"></p>
+<p> <img src="images/8flow.jpg" width="300px" height="300px"> &times; <img src="images/4flow.jpg" width="300px" height="300px"> =
+ <input id="5"  type="text" style="font-size:80%; width:35px; height:35px;"></p>
+<button type="button" onclick="fn()">click</button>
+<p id="r"></p>
+<script>
+function fn()
+ {
+let c=0;
+if(document.getElementById("1").value=="21")
+c+=1;
+if(document.getElementById("2").value=="20")
+c+=1;
+if(document.getElementById("3").value=="4")
+c+=1;
+if(document.getElementById("4").value=="25")
+c+=1;
+if(document.getElementById("5").value=="32")
+c+=1;
+alert("TOTAL SCORE"+c);
+document.getElementById("r").innerHTML="TOTAL SCORE:"+c;
+}
+</script>
+</body>
+
+</html>
