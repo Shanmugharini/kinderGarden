@@ -1,0 +1,88 @@
+body {
+  margin: 20px;
+}
+script {
+  margin: 0 auto;
+}
+#root {
+  position: relative;
+  margin: 0 auto;
+}
+
+.unSelected {
+  text-decoration: none;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: black;
+}
+
+.curSelected {
+  text-decoration: underline;
+  color: red;
+}
+
+li:hover {
+  text-decoration: underline;
+  cursor: crosshair;
+}
+
+#myCanvas {
+  position: relative;
+  background: rgba(100, 100, 255, 0.5);
+  width: 100vh;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+.color-guide {
+  margin: 20px 40px;
+}
+h5 {
+  margin-bottom: 10px;
+}
+.user {
+  padding: 7px 15px;
+  border-radius: 4px;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  background: #ee92c2;
+  margin: 10px 0;
+}
+.guest {
+  background: #f0c987;
+  color: white;
+}
+
+canvas {
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+}
+/* 
+.candivq{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  border:1px soild;
+  margin:5px;
+}
+
+.candiva{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  border:1px soild;
+  margin:5px;
+}
+.candiva li{
+  margin-left:5px;
+} */
