@@ -89,20 +89,12 @@ Includes question-based quizzes and activities such as image-based multiple-choi
 ### 7. Progress Tracking
 Uses browser local storage to retain selected progress information on the same browser.
 
-## Technical Notes and Limitations
+## Potential Enhancements
 
-- User/account and progress information is stored in the browser using local storage; it is not backed by a server-side authentication system or database.
-- Local-storage-based credentials are suitable only for demonstration purposes and should not be used to protect real user accounts or sensitive information.
-- Some pages load libraries or icons from external CDNs, so an internet connection may be required for those resources.
-- The project is currently structured as a collection of linked HTML pages rather than a single-page application.
-
-## Future Improvements
-
-- Add secure backend authentication and database-backed user profiles.
-- Provide centralized progress tracking across devices.
-- Improve accessibility and responsive behaviour across screen sizes.
-- Add more grade levels, subjects, and learning activities.
-- Add automated tests for quiz logic and interactive components.
+- Extend the application with backend services and persistent user management.
+- Introduce cross-device learning progress synchronization.
+- Expand the platform with additional subjects, grade levels, and interactive learning experiences.
+- Strengthen accessibility, responsive design, and automated testing.
 
 ## License
 
